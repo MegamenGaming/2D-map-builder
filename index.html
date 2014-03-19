@@ -1,1 +1,118 @@
  
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	    <link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.4.custom.min.css">
+		
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery.mousewheel.js"></script> <!-- mouse wheel activity -->
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="grid_condensedLoopCode2.js"></script>
+
+        <title>DWD HTML5 Experiments - TronScape</title>
+        
+		<style>
+			html, body {
+				background-color: #000;
+				margin: 0px;
+				padding: 0px;
+			}
+
+			canvas {
+				border: 6px #444444 solid;
+				-webkit-transform:  translateZ(1100px) rotateX(90deg);
+				/*transform: translateZ(100px) rotateX(90deg);*/
+			}
+			/*.ui-slider-horizontal .ui-state-default {background: white url(http://stackoverflow.com/content/img/so/vote-arrow-down.png) no-repeat scroll 50% 50%;}*/
+			.ui-slider .ui-slider-handle {
+			    width: 0.8em;
+			    height: 0.8em;
+			    margin-left: -5px;
+			    top: -0.3em;
+			    border:none;
+			}
+			.canvasInitial {
+				-webkit-transform:  translateZ(1100px) rotateX(90deg);
+				-webkit-transition: -webkit-transform 2.5s ease;
+			}			
+			.canvasAway {
+				-webkit-transform:  translateZ(-530px) rotateX(33deg);
+				-webkit-transition: -webkit-transform 2.5s ease;
+			}
+			.canvasHome {
+				-webkit-transform:  translateZ(0px) rotateX(0deg);
+				-webkit-transition: -webkit-transform 5.5s ease;
+			}
+			#container {
+				position: absolute;
+				background: #333333 url('../../_/images/DWD_FBApps_bg.jpg') no-repeat;
+				background-size: cover;
+				margin-top: 40px;
+				margin-left: auto;
+				width: 100%;
+				height: 907px;
+			}
+			#panel {
+				cursor: default; /* <-- jQuery UI forced me to adopt this - clicking on the canvas changed pointer to text selector */
+				-webkit-perspective: 1500px;
+				perspective: 200px;
+			}			
+			#options{
+				margin-top: 7px;
+				margin-right: 8px;
+				font-family: Orbitron, Arial, serif;
+			}		
+			#world {background-color: #000000;}
+
+			#bannerContainer {
+				float: right;			
+				background-color: #000;
+			}
+			#logoImage {
+				width:500px;
+				height:40px;
+			}
+			#slider{margin-right: 20px; margin-left: 20px; margin-top:14px;}
+			#canvasText{display:none;}
+			#canvasText, #bannerContainer {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+		</style>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+    	<div id="container"></div>
+		<audio id="audio-player" autoplay loop>
+		   	<source src= "../../_/media/Digi_Grid.mp3" type="audio/mp3"/>
+		    <source src= "../../_/media/digi_grid.ogg" type="audio/ogg"/>
+		   	<p>HTML5 Audio Not Supported here.</p>
+		</audio>
+		<div id="bannerContainer">
+			<div id="logo">
+				<img id="logoImage" src="../../_/images/tronText.gif"/>
+			</div>		
+			<div id="options" style="float: left; color: #21C2BC">
+				<input type="checkbox" id="particles" class="checkOptions">Particles</input>
+				<input type="checkbox" id="pen" class="checkOptions">Light Pen</input>
+				<!-- <input type="checkbox" id="backGrid" class="checkOptions">Back Grid</input> -->
+			</div>
+			<!-- This line causes massive slowdown when linked remotely to jQuery UI (so I'm using custom local store) -->
+			<div id="slider" style="float: left; height:4px; width: 100px;"></div>
+		</div>
+		<div id="panel">
+			<div id="panelContainer">
+				<canvas id="world" class="canvasInitial"><p>Sorry, you have no canvas support.</p></canvas>
+				<canvas id="vGrid1" class="canvasInitial"></canvas>
+				<canvas id="hGrid1" class="canvasInitial"></canvas>
+			</div>
+		</div>
+		<div id="canvasText"><img src="../../_/images/gridAccess.png"/></div>			
+    </body>
+</html>

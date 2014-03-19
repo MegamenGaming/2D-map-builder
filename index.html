@@ -12,81 +12,8 @@
 		<script src="script.js"></script>
 		<script src="console.js"></script>
 
-        <title>DWD HTML5 Experiments - TronScape</title>
-        
-		<style>
-			html, body {
-				background-color: #000;
-				margin: 0px;
-				padding: 0px;
-			}
-
-			canvas {
-				border: 6px #444444 solid;
-				-webkit-transform:  translateZ(1100px) rotateX(90deg);
-				/*transform: translateZ(100px) rotateX(90deg);*/
-			}
-			/*.ui-slider-horizontal .ui-state-default {background: white url(http://stackoverflow.com/content/img/so/vote-arrow-down.png) no-repeat scroll 50% 50%;}*/
-			.ui-slider .ui-slider-handle {
-			    width: 0.8em;
-			    height: 0.8em;
-			    margin-left: -5px;
-			    top: -0.3em;
-			    border:none;
-			}
-			.canvasInitial {
-				-webkit-transform:  translateZ(1100px) rotateX(90deg);
-				-webkit-transition: -webkit-transform 2.5s ease;
-			}			
-			.canvasAway {
-				-webkit-transform:  translateZ(-530px) rotateX(33deg);
-				-webkit-transition: -webkit-transform 2.5s ease;
-			}
-			.canvasHome {
-				-webkit-transform:  translateZ(0px) rotateX(0deg);
-				-webkit-transition: -webkit-transform 5.5s ease;
-			}
-			#container {
-				position: absolute;
-				background: #333333 url('../../_/images/DWD_FBApps_bg.jpg') no-repeat;
-				background-size: cover;
-				margin-top: 40px;
-				margin-left: auto;
-				width: 100%;
-				height: 907px;
-			}
-			#panel {
-				cursor: default; /* <-- jQuery UI forced me to adopt this - clicking on the canvas changed pointer to text selector */
-				-webkit-perspective: 1500px;
-				perspective: 200px;
-			}			
-			#options{
-				margin-top: 7px;
-				margin-right: 8px;
-				font-family: Orbitron, Arial, serif;
-			}		
-			#world {background-color: #000000;}
-
-			#bannerContainer {
-				float: right;			
-				background-color: #000;
-			}
-			#logoImage {
-				width:500px;
-				height:40px;
-			}
-			#slider{margin-right: 20px; margin-left: 20px; margin-top:14px;}
-			#canvasText{display:none;}
-			#canvasText, #bannerContainer {
-				-webkit-touch-callout: none;
-				-webkit-user-select: none;
-				-khtml-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-		</style>
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        	<title>DWD HTML5 Experiments - TronScape</title>
+        	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     </head>
     <body>
     	<div id="container"></div>

@@ -19,7 +19,7 @@ $(document).ready(function() {
       consoleLoaded = true;
     } //endif
     //if the console is shown, then pressing '/' will hide it
-    elseif (keyPressed === 47 && consoleLoaded === true) {
+    else if (keyPressed === 47 && consoleLoaded === true) {
       $('#console').hide();
         //this is now hidden and set to false
         consoleLoaded = false;

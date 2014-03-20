@@ -42,5 +42,4 @@ function settingsAccess(setting, choice) {
 
 function contactDevelopers(reason, message) {
   //now, an email is composed with the subject line is 'reason' and the content is 'message'
-
 }

@@ -27,3 +27,20 @@ $(document).ready(function() {
   });
 
 });
+
+
+//commands
+
+function settingsAccess(setting, choice) {
+  if (setting === "LAYOUT") {
+    //now change the layout to whatever 'choice' is
+  } //endif
+  if (setting === "THEME") {
+    //now change the theme to whatever 'choice' is
+  } //endif
+} //end settingsAccess
+
+function contactDevelopers(reason, message) {
+  //now, an email is composed with the subject line is 'reason' and the content is 'message'
+
+}

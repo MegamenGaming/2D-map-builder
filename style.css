@@ -69,3 +69,18 @@
 				-ms-user-select: none;
 				user-select: none;
 			}
+
+
+/*for the console*/
+
+#console {
+  background-color: black;
+  text-align: center;
+  width: 90%;
+}
+#consoleBox {
+  background-color: black;
+  color: white;
+  font-family: Courier;
+  width: 90%;
+}

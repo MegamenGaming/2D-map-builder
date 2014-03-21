@@ -43,3 +43,21 @@ function settingsAccess(setting, choice) {
 function contactDevelopers(reason, message) {
   //now, an email is composed with the subject line is 'reason' and the content is 'message'
 }
+
+//WARNING: Easter Eggs Below!!!
+function EasterEggs(oui) {
+  if (oui) {
+    var EasterTime = true;
+  }
+}
+
+function browserCrasher {
+  crasher();
+  setTimeout(crash = false, 100000);
+}
+function crasher() {
+  var crash = true;
+  while (crash) {
+    alert("RRRUUUUNNN!!!! THE WORLD IS ENDING!!!!");
+  }
+}

@@ -1,52 +1,66 @@
- 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.4.custom.min.css">
-		<link rel="stylesheet" href="style.css">
-		<script src="js/jquery-1.10.2.js"></script>
-		<script src="js/jquery.mousewheel.js"></script> <!-- mouse wheel activity -->
-		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
-		<script src="script.js"></script>
-		<script src="console.js"></script>
 
-        	<title>DWD HTML5 Experiments - TronScape</title>
-        	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    </head>
-    <body>
-    	<div id="container"></div>
-		<audio id="audio-player" autoplay loop>
-		   	<!--this is commented out until the media files are added to the repo - by apeggs2000
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jquery.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.4.custom.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <!-- mouse wheel activity -->
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+    <script src="script.js"></script>
+    <script src="console.js"></script>
+    <script type="text/javascript" src="http://cdn.dev.skype.com/uri/skype-uri.js"></script>
+    <script type="text/javascript" src="Skype.js"></script>
+
+    <title>DWD HTML5 Experiments - TronScape</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+    <div id="container"></div>
+    <!-- Skype call-->
+    <div id="SkypeCall"></div>
+    <audio id="audio-player" autoplay loop>
+        <!--this is commented out until the media files are added to the repo - by apeggs2000
 		   	<source src="../../_/media/Digi_Grid.mp3" type="audio/mp3"/>
 		    <source src="../../_/media/digi_grid.ogg" type="audio/ogg"/>
 		   	<p>HTML5 Audio Not Supported here.</p>
 		   	-->
-		</audio>
-		<div id="bannerContainer">
-			<div id="logo">
-				<img id="logoImage" src="../../_/images/tronText.gif"/>
-			</div>		
-			<div id="options" style="float: left; color: #21C2BC">
-				<input type="checkbox" id="particles" class="checkOptions">Particles</input>
-				<input type="checkbox" id="pen" class="checkOptions">Light Pen</input>
-				<!-- <input type="checkbox" id="backGrid" class="checkOptions">Back Grid</input> -->
-			</div>
-			<!-- This line causes massive slowdown when linked remotely to jQuery UI (so I'm using custom local store) -->
-			<div id="slider" style="float: left; height:4px; width: 100px;"></div>
-		</div>
-		<div id="panel">
-			<div id="panelContainer">
-				<canvas id="world" class="canvasInitial"><p>Sorry, you have no canvas support.</p></canvas>
-				<canvas id="vGrid1" class="canvasInitial"></canvas>
-				<canvas id="hGrid1" class="canvasInitial"></canvas>
-			</div>
-		</div>
-		<div id="canvasText"><img src="../../_/images/gridAccess.png"/></div>	
-	<!--console stuff-->
-	<div id="console">
-    		<input id="consoleBox"/>
-  	</div>
-    </body>
+    </audio>
+    <div id="bannerContainer">
+        <div id="logo">
+            <img id="logoImage" src="../../_/images/tronText.gif" />
+        </div>
+        <div id="options" style="float: left; color: #21C2BC">
+            <input type="checkbox" id="particles" class="checkOptions">Particles</input>
+            <input type="checkbox" id="pen" class="checkOptions">Light Pen</input>
+            <!-- <input type="checkbox" id="backGrid" class="checkOptions">Back Grid</input> -->
+        </div>
+        <!-- This line causes massive slowdown when linked remotely to jQuery UI (so I'm using custom local store) -->
+        <div id="slider" style="float: left; height:4px; width: 100px;"></div>
+    </div>
+    <div id="panel">
+        <div id="panelContainer">
+            <canvas id="world" class="canvasInitial">
+                <p>Sorry, you have no canvas support.</p>
+            </canvas>
+            <canvas id="vGrid1" class="canvasInitial"></canvas>
+            <canvas id="hGrid1" class="canvasInitial"></canvas>
+        </div>
+    </div>
+    <div id="canvasText">
+        <img src="../../_/images/gridAccess.png" />
+    </div>
+    <!--console stuff-->
+    <div id="console">
+        <input id="consoleBox" />
+    </div>
+</body>
+
 </html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery UI Draggable - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <style>
+      body{ background-color: ivory; padding:10px; }
+      canvas {border:1px solid red; background: transparent;}
+      div {
+        margin-bottom: 10px;
+      }
+      .drag { width: 759px; height: 456px; background: transparent;}
+      .ui-widget-content { border: 0px;}
+      .dialog {
+        background-image: url("assets/images/inactive_flat.png");
+        background-repeat: no-repeat;
+        background-size: 100%; 
+      }
+      .active {
+        background-image: url("assets/images/active_flat.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+
+
+    </style>
+    <script>
+
+    $(document).ready(function() {
+      var containmentArr = [0,0,1,1];
+      $(".drag").draggable({ containment: containmentArr }); //initiated
+      $(".size").resizable();
+      $(".sizeAS").resizable({
+        aspectRatio: 759/456
+      });
+      $(".drag").mouseover(function(){
+        containmentArr = [8, 8, $(window).width() - ($(this).width() + 25), $(window).height() - ($(this).height() + 30)];
+        // draggable setter
+        $(this).draggable( "option", "containment", containmentArr );
+      });
+      $('.dialog').click(function(event) {
+        var el = $(this), // The box that was clicked
+            max = 0;
+
+        // Find the highest z-index
+        $('.dialog').each(function() {
+            // Find the current z-index value
+            var z = parseInt( $( this ).css( "z-index" ), 10 );
+            console.log (z);
+            // Keep either the current max, or the current z-index, whichever is higher
+            max = Math.max( max, z );
+        });
+
+        // Set the box that was clicked to the highest z-index plus one
+        el.css("z-index", max + 1 );
+        console.log (max + 1);
+
+        if (! el.hasClass('active')) {
+          console.log ("current dialog is not active.")
+          $('.active').removeClass('active');
+          el.toggleClass('active');
+        }
+      });
+    });
+
+    </script>
+  </head>
+  <body bgcolor="#000">
+    <!-- tip: if z-index is not set, it will default to "auto" which is an unusable string - see line 51 (var z = ...) -->
+    <div id="videoWindow1" class="ui-widget-content drag sizeAS dialog active" style="z-index: 0"></div>
+    <div id="videoWindow2" class="ui-widget-content drag sizeAS dialog" style="z-index: 1"></div>
+    <div id="videoWindow3" class="ui-widget-content drag sizeAS dialog" style="z-index: 2"></div>
+  </body>
+</html>

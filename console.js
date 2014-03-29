@@ -41,10 +41,12 @@ consoleBox.onkeypress = function(e) {
         //next line strips out any punctuation, converts to lowercase and splits the words into an array.
         var wordsArr = dirtyLine.replace(/[^\w\s]|_/g, "")
         .replace(/\s+/g, " ")
-        .toLowerCase()
+        .toUpperCase()
         .split(" ");
-        consoleStr  = "\n\n>>The last line entered (line " + (linesArr.length) + ") : " + linesArr[linesArr.length-1];				
-        consoleStr += "\nIt has " + wordsArr.length + " words: " + wordsArr + "\n\n$:>";
+        /*
+        * consoleStr  = "\n\n>>The last line entered (line " + (linesArr.length) + ") : " + linesArr[linesArr.length-1];				
+        * consoleStr += "\nIt has " + wordsArr.length + " words: " + wordsArr + "\n\n$:>";
+        */
         this.value += consoleStr;
         this.scrollTop = this.scrollHeight; //scroll to bottom.
         return false; //prevents adding our initial hard return keypress to the end!

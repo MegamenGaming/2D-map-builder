@@ -2,6 +2,8 @@
 var consoleDiv = document.getElementById("console");
 var consoleBox = document.getElementById("consoleBox");
 
+consoleBox.focus();
+
 //the jQuery to hide/show the console
 $(document).ready(function() {
   //hide the console at startup
@@ -27,6 +29,30 @@ $(document).ready(function() {
   });
 
 });
+
+//digi's console code
+consoleBox.selectionStart = consoleBox.selectionEnd = consoleBox.value.length;
+consoleBox.onkeypress = function(e) {
+    var keyCode = e.keyCode || e.which;
+    if (keyCode === 13) {
+        //next line takes the whole of the textarea text and splits it up into an array of lines (based on hard returns).
+        var linesArr = this.value.substr(0, this.selectionStart).split("\n");
+        var dirtyLine = linesArr[linesArr.length-1];
+        //next line strips out any punctuation, converts to lowercase and splits the words into an array.
+        var wordsArr = dirtyLine.replace(/[^\w\s]|_/g, "")
+        .replace(/\s+/g, " ")
+        .toUpperCase()
+        .split(" ");
+        /*
+        * consoleStr  = "\n\n>>The last line entered (line " + (linesArr.length) + ") : " + linesArr[linesArr.length-1];				
+        * consoleStr += "\nIt has " + wordsArr.length + " words: " + wordsArr + "\n\n$:>";
+        */
+        this.value += consoleStr;
+        this.scrollTop = this.scrollHeight; //scroll to bottom.
+        return false; //prevents adding our initial hard return keypress to the end!
+    }
+}
+//end digi's console code
 
 
 //commands
